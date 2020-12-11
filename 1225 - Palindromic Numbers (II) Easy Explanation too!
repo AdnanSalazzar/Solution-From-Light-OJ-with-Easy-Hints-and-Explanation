@@ -1,0 +1,36 @@
+/*
+  take input as a string .
+  Start checking from beggining and end then see of they are equal if not then NOT !
+  
+  
+*/
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char sen[1000],word[1000],temp[1000];
+    int i,j,n,flag=1, T, k;
+ 
+    scanf("%d", &T);
+    getchar();
+    for(k = 1 ; k <= T ; k++)
+    {
+ 
+        gets(sen);
+        n=strlen(sen);
+        for(i = 0,j = n-1 ; i < n,j >= 0; i++, j--)
+        {
+            if(sen[i] != sen[j])
+            {
+                flag=0;
+                break;
+            }
+        }
+        if(flag)
+            printf("Case %d: Yes\n" , k);
+        else
+            printf("Case %d: No\n",k);
+        flag=1;
+    }
+}
