@@ -1,0 +1,55 @@
+/*
+  This is an easy problem only thing in your way is observation
+  
+  lets say 
+  m = 12    n = 3 
+  
+  writing down the numbers 
+  -1 -2 -3 + 4 + 5 + 6 -7 -8 -9 + 10 + 11 + 12
+  
+  observe the first half 
+  -1 -2 -3 + 4 + 5 + 6 = 9 
+  and the other half
+  -7 -8 -9 + 10 + 11 + 12 = 9 
+  
+  so there are 2 sets and each part adds up to 9 
+  
+  so we have to find number of sets 
+  and
+  what does sets adds up to 
+  
+  so, 
+  
+  sets = (((n / m) --> number of groups )  / 2 )--> number of sets
+  
+  multiple = n * n 
+  
+  then multiple * sets ---> is the answer.
+  
+  GG
+*/
+
+
+
+#include<bits/stdc++.h>
+using namespace std ;
+int main()
+{
+
+    long long int  T , i , m , n , multiple , sets ;
+
+    cin >> T ;
+
+    for(i = 1 ; i<= T ; i++)
+    {
+        cin >> n >> m ;
+
+        multiple = (m * m) ;
+       // cout << multiple <<endl;
+        sets = (n/ m) / 2;
+       // cout << sets <<endl;
+        printf("Case %lld: %lld\n" ,i ,  multiple *  sets );
+
+    }
+    return 0 ;
+}
