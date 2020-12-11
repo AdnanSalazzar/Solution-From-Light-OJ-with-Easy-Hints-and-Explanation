@@ -1,0 +1,63 @@
+/*
+  This is simple math problem 
+  
+  to find dx or dy 
+  add the opposite known point then minus by another known point.
+  
+  To find area 
+  You wont be able to use A = Length * Breath  because the parallelogram can be rotated and bx - ax will not be parallel to axies,
+  
+  so 
+  
+  use pythagorus theorem to find length and breath 
+  
+  now observe that a parallelogram can be divided in two symmetrically to make two triangles 
+  so now find the length of diagonal by pythagorus theorem 
+  
+  then sides a b c is known 
+  
+  s = (a+b+c) /2 
+  
+  area = sqrt( s * (a-s) * (b -s) * (c - s)))
+  
+  GG
+
+*/
+
+
+
+
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std; 
+
+int main()
+{
+    int  ax , ay , bx , by , dx , dy , cx , cy  ;
+    long double  area   ,s  , a, b ,c, d ; 
+    int i , T  ;
+    cout << setprecision(0) <<fixed;
+
+
+    cin >> T ; 
+    for(i = 1 ; i <=T ; i++)
+    {
+        cin >> ax >>ay >> bx >> by >> cx >> cy ; 
+
+        dx = (ax + cx) - bx ;
+        dy = (ay + cy) -by ;
+
+        a = sqrt( pow( (bx - ax) , 2 ) + pow((by - ay) , 2) );
+        c = sqrt( pow( (cx - bx) , 2 ) + pow((cy - by) , 2) );
+        b = sqrt( pow( (cx - ax) , 2 ) + pow((cy - ay) , 2) );
+
+        s = (a+ b +c) / 2 ;
+
+        area = sqrt ( s *(s - a) * ( s - b) * (s - c));
+
+        cout << "Case "<<i <<": " << dx <<" "<< dy <<" " << area * 2 <<endl;
+        
+    }
+return 0 ;
+}
